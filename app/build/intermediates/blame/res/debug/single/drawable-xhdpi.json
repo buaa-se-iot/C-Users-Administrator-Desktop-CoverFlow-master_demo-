@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\CoverFlow-master_demo (1)\\CoverFlow-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_ic_go_search_api_mtrl_alpha.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\e469d0b28c7482ead0b814d01f00bb4814c66986\\output\\res\\drawable-xhdpi\\abc_ic_go_search_api_mtrl_alpha.png"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\Desktop\\CoverFlow-master_demo (1)\\CoverFlow-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_textfield_search_activated_mtrl_alpha.9.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\e469d0b28c7482ead0b814d01f00bb4814c66986\\output\\res\\drawable-xhdpi\\abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\CoverFlow-master_demo (1)\\CoverFlow-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_ic_go_search_api_mtrl_alpha.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\e469d0b28c7482ead0b814d01f00bb4814c66986\\output\\res\\drawable-xhdpi\\abc_ic_go_search_api_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CoverFlow-master_demo (1)\\CoverFlow-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_textfield_search_default_mtrl_alpha.9.png",

@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\e469d0b28c7482ead0b814d01f00bb4814c66986\\output\\res\\drawable-mdpi\\abc_textfield_default_mtrl_alpha.9.png"
     },
     {
-        "merged": "C:\\Users\\Administrator\\Desktop\\CoverFlow-master_demo (1)\\CoverFlow-master\\lib\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
-        "source": "C:\\Users\\Administrator\\.android\\build-cache\\e469d0b28c7482ead0b814d01f00bb4814c66986\\output\\res\\drawable-mdpi\\abc_textfield_search_activated_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\Administrator\\Desktop\\CoverFlow-master_demo (1)\\CoverFlow-master\\lib\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_list_focused_holo.9.png",
         "source": "C:\\Users\\Administrator\\.android\\build-cache\\e469d0b28c7482ead0b814d01f00bb4814c66986\\output\\res\\drawable-mdpi\\abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Administrator\\Desktop\\CoverFlow-master_demo (1)\\CoverFlow-master\\lib\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Administrator\\.android\\build-cache\\e469d0b28c7482ead0b814d01f00bb4814c66986\\output\\res\\drawable-mdpi\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\Administrator\\Desktop\\CoverFlow-master_demo (1)\\CoverFlow-master\\lib\\build\\intermediates\\res\\merged\\release\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png",

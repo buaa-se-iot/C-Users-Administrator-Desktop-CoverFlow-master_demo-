@@ -35,7 +35,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.topelec.smarthome.Settings" />
+        <!-- <activity android:name="com.topelec.smarthome.Settings" /> -->
         <activity android:name="com.topelec.smartagriculture.MainActivity" >
             <intent-filter>
                 <action android:name="com.topelec.smartagriculture.ACTION_AGRICULTURE" />
@@ -43,7 +43,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name="com.topelec.smartagriculture.SmartAgricultureSettings" />
         <activity android:name="com.topelec.foodtraceability.QueryActivity" >
             <intent-filter>
                 <action android:name="com.topelec.foodtraceability.ACTION_FOODTRACEABILITY" />
