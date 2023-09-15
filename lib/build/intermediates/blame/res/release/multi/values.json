@@ -3112,9 +3112,9 @@
                     "position": {
                         "startLine": 1,
                         "startColumn": 4,
-                        "startOffset": 17,
+                        "startOffset": 16,
                         "endColumn": 46,
-                        "endOffset": 59
+                        "endOffset": 58
                     }
                 }
             },

@@ -133,6 +133,7 @@ public class SensorControl {
         }
 
         mFd = HardwareControl.OpenSerialPort(device.getAbsolutePath(), Command.bautrate,0);
+        Log.v("DEV","文件描述符："+mFd);
         if (mFd == null) {
             Log.v("DEV", "native open returns null");
             throw new IOException();
@@ -145,6 +146,7 @@ public class SensorControl {
     }
 
     public void actionControl(boolean isOpen) {
+        Log.v("DEV","actionControl="+isOpen);
         if (isOpen) {
 //            try {
 //                initUart();
@@ -392,6 +394,7 @@ public class SensorControl {
             }
         } else {                                 //插入队列头部，优先发送
             synchronized (sendingQueue) {
+                Log.v("DEV","发送队列："+sendingQueue.toString());
                 sendingQueue.addFirst(element);
             }
         }
@@ -420,6 +423,9 @@ public class SensorControl {
         int ad_value,temphum_value;
         Message msg = new Message();
         Bundle data = new Bundle();
+        Log.v("DEV","数据处理");
+        Log.v("DEV",msg.getData().toString());
+
         switch (cmd[1]) {
 
 
@@ -514,6 +520,9 @@ public class SensorControl {
                                 if (sum == buffer[i]) {
                                     //TODO 分析指令
                                     parseCommand(cmd);
+                                    Log.v("DEV","cmd=");
+                                    Log.v("DEV",toHex(cmd));
+                                    Log.d(TAG,toHex(cmd));
                                     flag = 0;
                                     sum = 0;
                                     cmd_len = 0;
@@ -690,6 +699,7 @@ public class SensorControl {
     public void notifyLedListener(byte led_id,byte led_status) {
         for (LedListener ledListener:ledListeners) {
             ledListener.LedControlResult(led_id,led_status);
+            Log.v("DEV","LED发生变化");
         }
     }
 

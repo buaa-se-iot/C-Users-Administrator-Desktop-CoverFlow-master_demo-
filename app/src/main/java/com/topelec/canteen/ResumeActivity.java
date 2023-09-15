@@ -11,8 +11,6 @@ import android.content.IntentFilter;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,39 +19,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.topelec.database.DatabaseHelper;
-import com.topelec.zigbeecontrol.SensorControl;
 
 import java.text.DecimalFormat;
 
 import it.moondroid.coverflowdemo.R;
 
-public class ResumeActivity extends Activity implements View.OnClickListener,SensorControl.LedListener{
+public class ResumeActivity extends Activity {
     private Button btnCancel;
     private Button btnResume;
     private String currentId = new String();
     private String oldId = new String();
     private EditText resumeText;
     private TextView resumeRemaining;
-
-
-    Button led_switch;
-    private boolean isLed1On;
-    SensorControl mSensorControl;
-    Handler myHandler = new Handler() {
-
-        //2.重写消息处理函数
-        public void handleMessage(Message msg) {
-            Bundle data;
-            data = msg.getData();
-            if (data.getByte("led_status") == 0x01) {
-                isLed1On = true;
-            }else {
-                isLed1On = false;
-            }
-            super.handleMessage(msg);
-        }
-    };
-
     /**数据库相关**/
     Context mContext;
     DatabaseHelper mDatabaseHelper;
@@ -104,48 +81,9 @@ public class ResumeActivity extends Activity implements View.OnClickListener,Sen
         }
     };
     @Override
-    public void onClick(View v) {
-
-        switch (v.getId())
-        {
-            case R.id.led_switch:
-                Log.v("DEV","点击了testBtn");
-                if (isLed1On)
-                {
-                    mSensorControl.led1_Off(false);
-                }else{
-                    mSensorControl.led1_On(false);
-                }
-                break;
-        }
-    }
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mSensorControl.removeLedListener(this);
-        mSensorControl.closeSerialDevice();
-    }
-    @Override
-    public void LedControlResult(byte led_id,byte led_status) {
-        Message msg = new Message();
-        msg.what = 0x01;
-        Bundle data = new Bundle();
-        data.putByte("led_id",led_id);
-        data.putByte("led_status",led_status);
-        Log.v("DEV","LedControlResult:ledid="+led_id+",led_status="+led_status);
-        msg.setData(data);
-        myHandler.sendMessage(msg);
-    }
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canteen_resume);
-        led_switch=(Button)findViewById(R.id.led_switch);
-        led_switch.setOnClickListener(this);
-        mSensorControl=new SensorControl();
-        mSensorControl.addLedListener(this);
         resumeText=(EditText)findViewById(R.id.editText_resume);
         resumeRemaining=(TextView)findViewById(R.id.resume_remain_text);
         /**数据库相关变量初始化**/
@@ -268,7 +206,6 @@ public class ResumeActivity extends Activity implements View.OnClickListener,Sen
         /**用于接收group发送过来的广播**/
         IntentFilter filter = new IntentFilter(CanteenActivityGroup.resume_action);
         registerReceiver(mBroadcastReceiver,filter);
-        mSensorControl.actionControl(true);
     }
     @Override
     protected void onResume() {
@@ -280,7 +217,6 @@ public class ResumeActivity extends Activity implements View.OnClickListener,Sen
     protected void onStop() {
         super.onStop();
         unregisterReceiver(mBroadcastReceiver);
-        mSensorControl.actionControl(false);
     }
     private void updateCardUI(String CardId) {
         String searchResult = searchHFCard(CARD_ID,CardId);
